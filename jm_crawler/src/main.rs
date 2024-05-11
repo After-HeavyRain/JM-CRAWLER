@@ -1,5 +1,6 @@
 use reqwest::Result;
 use scraper::{Html, Selector};
+use tokio;
 
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -14,6 +15,7 @@ async fn main() -> Result<()> {
         .send()
         .await?
         .text()
+
         .await?;
 
     //print!("{:#?}", resp);
